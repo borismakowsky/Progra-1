@@ -1,0 +1,42 @@
+// zona de control.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+void main ()
+
+{
+	float p1,p2,p3,np,ef,nf,promedio;
+	int i=1,nr;
+	char m;
+	promedio=0;
+	i=1;
+	do 
+
+	{
+
+		cout<<"Introducir nota del primer parcial: ";
+		cin>>p1;
+		cout<<"Introducir nota del segundo parcial: ";
+		cin>>p2;
+		cout<<"Introducir nota del tercer parcial: ";
+		cin>>p3;
+		cout<<"introducir la nota practica: ";
+		cin>>np;
+		cout<<"Introducir nota del examen final: ";
+		cin>>ef;
+		nf=(np*0.2)+((p1+p2+p3)/3)*0.4+(ef*0.4);
+        promedio=promedio+nf;
+		cout<<"Ingrese el nuevo numero de registro o digite n para salir: ";
+		cin>>m;
+		i=i++;
+	}
+
+	while (m!='n');
+	cout<<"El promedio final sera: "<<nf/(i-1)<<endl;
+	getch();
+
+}
