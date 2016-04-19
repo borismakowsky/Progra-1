@@ -1,0 +1,37 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "math.h"
+
+using namespace std;
+
+void main()
+
+{ 
+
+	float s,fac,b,x; 
+	int sig,i,n; 
+
+	fac=1;
+	sig=1;
+	s=0;
+	cout<<"Ingrese el numero de terminos : "; 
+	cin>>n; 
+	cout<<"Ingrese el valor de x: "; 
+	cin>>x; 
+
+	for(i=1;i<=n;i=i++)
+	{ 
+		if (i%2!=0)
+		{
+			s=s+sig*(pow(x,i)/fac);
+			sig=-1*sig;
+		}
+		fac=fac*(i+1);  
+		
+	} 
+	cout<<"El resultado sera: "<<s<<endl;
+	getch();
+
+}
+
