@@ -1,0 +1,29 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#define pi 3.1416
+
+using namespace std;
+
+float valor_ganado(float n, float c);
+
+int main()
+
+{
+	float horas,costo,valor;
+	cout<<"Ingrese el numero de horas"<<endl;
+	cin>>horas;
+	cout<<"Ingrese el costo por hora"<<endl;
+	cin>>costo;
+	valor=valor_ganado(horas,costo);
+	cout<<"el valor ganado de un trabajador es: "<<valor<<endl;
+
+getch();
+return 0;
+}
+float valor_ganado (float n,float c)
+{
+	float s;
+	s=n*c;
+	return s;
+}
