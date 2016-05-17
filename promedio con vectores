@@ -1,0 +1,49 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#define MAX 100
+
+using namespace std;
+void cargar (double a[],int tam);
+void mostrar (double a[],int tam);
+double promedio (double a[],int tam);
+void main()
+{
+	double vec[MAX],prom;
+	int tam,n;
+	do
+	{
+		cout<<"Ingrese el numero de elementos: "<<endl;
+		cin>>n;
+	}while ((n<=0)||(n>100));
+	cargar (vec,n);
+	mostrar (vec,n);
+	prom=promedio (vec,n);
+	cout<<"El promedio sera: "<<prom<<endl;
+	getch();
+
+
+}
+
+void cargar (double a[],int tam)
+{
+	for(int i=0;i<tam;i++)
+	{
+		cout<<"a["<<i<<"]= ";
+		cin>>a[i];
+	}
+}
+void mostrar (double a[],int tam)
+{
+	for(int i=0;i<tam;i++)
+		cout<<"a["<<i<<"]= "<<a[i]<<endl;
+}
+double promedio (double a[],int tam)
+{
+	double p=0;
+	for (int i=0;i<tam;i++)
+	{
+		p=p+a[i];
+	}
+	return p/tam;
+}
