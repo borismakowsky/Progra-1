@@ -1,0 +1,56 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "math.h"
+#define MAX 100
+
+using namespace std;
+
+void eliminar(int vec[], int ans[], int n);
+void cargar(int vec[], int n);
+void mostrar(int vec[]);
+
+void main() {
+
+	int vec[MAX], ans[MAX];
+	int n;
+	cout << "INGRESE EL TAMANHO DEL VECTOR: ";
+	cin >> n;
+	cargar(vec, n);
+	eliminar(vec, ans, n);
+	mostrar(ans);
+}
+
+void cargar(int vec[], int n) {
+	for(int i = 0; i < n; i++) {
+		cout << "vec[" << i << "] = ";
+		cin >> vec[i];
+	}
+}
+
+void mostrar(int vec[]) {
+	int i = 0;
+	while(vec[i] != -111111111) {
+		cout << "vec[" << i << "] = " << vec[i] << endl;
+		i = i + 1;
+	}
+}
+
+void eliminar(int vec[], int ans[], int n) {
+
+	int ta = 0, band;
+	int tmp;
+	for(int i = 0; i < n; i++) {
+		tmp = vec[i];
+		band = 0;
+		for(int j = 0; j < ta; j++) {
+			if(ans[j] == tmp) {
+				band = 1;
+			}
+		}
+
+		if(band == 0) {
+			ans[ta] = tmp;
+			ta = ta + 1;
+		}
+	}
