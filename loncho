@@ -1,0 +1,77 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "math.h"
+#define pi 3.1416
+
+using namespace std;
+
+void main()
+
+{
+	int h,b,i,opcion,fac,n;
+	float r,x;
+
+	
+		cout<<" ---------MENU ------------           "<<endl;
+		cout<<"1.-Area del circulo"<<endl;
+		cout<<"2.-Area del triangulo"<<endl;
+		cout<<"3.-Area del rectangulo"<<endl;
+		cout<<"4.-Sacar el factorial"<<endl;
+		cout<<"0.-Salir"<<endl;
+		cout<<"----------------------------"<<endl;
+		cout<<"Elija una opcion"<<endl;
+		cin>>opcion;
+		switch(opcion)
+		{
+		case 1:
+			{
+				cout<<"Ingrese el radio"<<endl;
+				cin>>r;
+				x=pi*r*r;
+				cout<<"El resultado sera: "<<x<<endl;break;
+			}
+		case 2:
+			{
+				cout<<"Ingrese la base"<<endl;
+				cin>>b;
+				cout<<"Ingrese la altura"<<endl;
+				cin>>h;
+				x=(b*h)/2;
+				cout<<"El resultado sera: "<<x<<endl;break;
+			}
+		case 3:
+			{
+				cout<<"Ingrese la base"<<endl;
+				cin>>b;
+				cout<<"Ingrese la altura"<<endl;
+				cin>>h;
+				x=(b*h);
+				cout<<"El resultado sera: "<<x<<endl;break;
+			}
+		case 4:
+			{
+				cout<<"Introducir hasta que numero multiplicar"<<endl;
+				cin>>n;
+				fac=1;
+				i=1;
+				while (i<=n)
+				{
+				fac=fac*i;
+				i++;
+				}
+				cout<<"El resultado sera: "<<fac<<endl;
+			}
+		case 0: 
+			{
+				cout << "Gracias por usar nuestros servicios";break;
+			}
+    	default: cout << "Opcion invalida" << endl;
+		}
+	
+
+
+
+	getch();
+	 
+}
