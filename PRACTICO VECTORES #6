@@ -1,0 +1,48 @@
+#include "stdafx.h"
+#include "conio.h"
+#include <iostream>
+#define MAX 100
+
+using namespace std;
+
+
+void cargar (double vec[],int n);
+void mostrar (double vec[],int n);
+void mayor (double vec[],int n);
+void promedio (double vec[],int n);
+void revertir (double vec[],int n);
+void capicua (double vec[],int n);
+void prom (double vec[],int n);
+
+void main()
+{
+	double vec[MAX];
+	int n;
+	cout<<"INTRODUCIR EL TAMANHO DEL VECTOR"<<endl;
+	cin>>n;
+	cargar (vec,n);
+	prom(vec,n);
+	getch();
+}
+void cargar (double vec[],int n)
+{
+	int i;
+	for(i=0;i<n;i++)
+	{
+		cout<<"VEC["<<i<<"]"<<endl;
+		cin>>vec[i];
+	}
+}
+
+
+void prom (double vec[],int n)
+{
+	int i;
+	float prom=0,prom1;
+	for(i=0;i<n;i++)
+	{
+		prom=(vec[i]+vec[i+1]+vec[i+2]);
+		prom1=prom/3;
+		cout<<"prom"<<"["<<i<<"]= "<<prom1<<endl;
+	}
+}
