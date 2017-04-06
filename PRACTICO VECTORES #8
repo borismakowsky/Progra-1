@@ -1,0 +1,50 @@
+#include "stdafx.h"
+#include "conio.h"
+#include <iostream>
+#include "math.h"
+#define MAX 100
+
+using namespace std;
+
+
+void cargar (double vec[],int n);
+void mostrar (double vec[],int n);
+void mayor (double vec[],int n);
+void promedio (double vec[],int n);
+void revertir (double vec[],int n);
+void capicua (double vec[],int n);
+void prom (double vec[],int n);
+void diferenciamax (double vec[],int n);
+
+void main()
+{
+	double vec[MAX];
+	int n;
+	cout<<"INTRODUCIR EL TAMANHO DEL VECTOR"<<endl;
+	cin>>n;
+	cargar (vec,n);
+	diferenciamax(vec,n);
+	getch();
+}
+void cargar (double vec[],int n)
+{
+	int i;
+	for(i=0;i<n;i++)
+	{
+		cout<<"VEC["<<i<<"]"<<endl;
+		cin>>vec[i];
+	}
+}
+void diferenciamax (double vec[],int n)
+{
+	int i,may=0,p;
+	for(i=0;i<n;i++)
+	{
+		p=(vec[i]-vec[i+1]);
+		if (may>abs(p))
+			may=may;
+		else
+			may=p;
+	}
+	cout<<"LA MAYOR DIFERENCIA SERA: "<<may<<endl;
+}
