@@ -1,0 +1,44 @@
+
+#include "stdafx.h"
+#include "conio.h"
+#include <iostream>
+#define MAX 100
+
+using namespace std;
+
+
+void cargar (double vec[],int n);
+void mayor (double vec[],int n);
+void promedio ()
+
+void main()
+{
+	double vec[MAX];
+	int n;
+	cout<<"INTRODUCIR EL TAMANHO DEL VECTOR"<<endl;
+	cin>>n;
+	cargar (vec,n);
+	mayor(vec,n);
+	getch();
+}
+void cargar (double vec[],int n)
+{
+	int i;
+	for(i=0;i<n;i++)
+	{
+		cout<<"VEC["<<i<<"]"<<endl;
+		cin>>vec[i];
+	}
+}
+void mayor (double vec[],int n)
+{
+	int i,may=0;
+	for(i=0;i<n;i++)
+	{
+		if(may<vec[i])
+			may=vec[i];
+		else
+			may=may;
+	}
+	cout<<"EL NUMERO MAYOR ES "<<may;
+}
